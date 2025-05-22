@@ -1,0 +1,176 @@
+.content {
+  // position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+
+  .Navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    @media (max-width: 768px) {
+      padding: 6px 16px;
+    }
+    .hamburg {
+      display: none;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+    .link {
+
+      .headerImg {
+        width: 200px;
+        height: unset !important;
+        @media (max-width: 768px) {
+          width: 112px;
+          height: 28px;
+        }
+      }
+    }
+
+    .list {
+      // width: 446px;
+      // height: 23px;
+      // height: 26px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li{
+
+          a{
+            text-decoration: none;
+            font-family: Poppins;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            text-align: center;
+            color: #000;
+          }
+        }
+       
+      }
+    }
+    .input {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      .inputField {
+        position: relative;
+        width: 100%;
+        @media (max-width: 768px) {
+          display: none;
+        }
+        //   max-width: 243px;
+
+        .field {
+          border-radius: 4px;
+          width: 243px;
+          padding: 7px 12px 7px 20px;
+          color: #000;
+          border: 1px solid #f2f2f2;
+          background-color: #f5f5f5;
+        }
+        .searchIcon {
+          position: absolute;
+          right: 18px;
+          width: 16px;
+          height: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .icon {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        // width: 79px;
+        // height: 32px;
+      }
+    }
+  }
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: slideIn 0.3s ease-in-out forwards;
+
+    .closeIcon {
+      align-self: flex-end;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .mobileList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        font-size: 18px;
+        font-weight: 500;
+
+        a{
+          text-decoration: none;
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0%;
+          text-align: center;
+          color: #000;
+        }
+      }
+    }
+
+    .mobileInputField {
+      position: relative;
+      .field {
+        border-radius: 4px;
+        width: 100%;
+        padding: 10px 16px;
+        color: #000;
+        border: 1px solid #f2f2f2;
+        background-color: #f5f5f5;
+      }
+
+      .searchIcon {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
