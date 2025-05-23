@@ -1,21 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
-import Image from "next/image";
-import Card from "@/components/card";
+import styles from "../list-products/styles.module.scss";
 import { listCard } from "@/components/data";
-import bannerImage from "../../../../../public/assets/images/new_bag.jpg";
+import Card from "@/components/card";
 
-const Midsection = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("new arrivals");
-  const [displayCount, setDisplayCount] = useState<number>(8);
+export default function ListProducts() {
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [displayCount, setDisplayCount] = useState<number>(20);
   const [wishlist, setWishlist] = useState<string[]>([]);
-
-  // const categories = [
-  //   { value: "new arrivals", label: "New Arrivals" },
-  //   { value: "best selling", label: "Best Selling" },
-  //   { value: "top selling", label: "Top Rating" },
-  // ];
 
   const filteredProducts =
     activeCategory === "all"
@@ -39,32 +31,29 @@ const Midsection = () => {
     });
   };
 
-  // const loadMore = () => {
-  //   setDisplayCount((prev) => prev + 8);
-  // };
-
   return (
-    <section className={styles.content}>
-      <div className={styles.header}>
-        <h1>A Touch of brilliance for every look</h1>
-      </div>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.img}>
-          <Image
-            src={bannerImage}
-            alt="img1"
-            width={200}
-            height={200}
-            className={styles.imag}
-          />
+        <div className={styles.container_filter}>
           <div className={styles.btns}>
+            <button
+              className={`${styles.btnOne} ${
+                activeCategory === "all" ? styles.active : ""
+              }`}
+              onClick={() => {
+                setActiveCategory("all");
+                setDisplayCount(20);
+              }}
+            >
+              All
+            </button>
             <button
               className={`${styles.btnOne} ${
                 activeCategory === "new arrivals" ? styles.active : ""
               }`}
               onClick={() => {
                 setActiveCategory("new arrivals");
-                setDisplayCount(8);
+                setDisplayCount(20);
               }}
             >
               New Arrivals
@@ -75,7 +64,7 @@ const Midsection = () => {
               }`}
               onClick={() => {
                 setActiveCategory("best selling");
-                setDisplayCount(8);
+                setDisplayCount(20);
               }}
             >
               Best Selling
@@ -86,14 +75,13 @@ const Midsection = () => {
               }`}
               onClick={() => {
                 setActiveCategory("top selling");
-                setDisplayCount(8);
+                setDisplayCount(20);
               }}
             >
               Top Rating
             </button>
           </div>
         </div>
-
         <div className={styles.card_wrapper}>
           {displayedProducts.map((product) => (
             <Card
@@ -108,15 +96,7 @@ const Midsection = () => {
             />
           ))}
         </div>
-
-        {/* {displayedProducts.length < filteredProducts.length && (
-          <button className={styles.loadMoreButton} onClick={loadMore}>
-            Load More
-          </button>
-        )} */}
       </div>
-    </section>
+    </div>
   );
-};
-
-export default Midsection;
+}

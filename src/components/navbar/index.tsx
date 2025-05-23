@@ -5,9 +5,11 @@ import Link from "next/link";
 import logo from "../../../public/assets/images/sbk_logo.svg";
 import styles from "./styles.module.scss";
 import { CartIcon, HamburgerIcon, LoveIcon, SearchIcon } from "../icon";
+import { useCart } from "../context";
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const { cartCount } = useCart();
 
   return (
     <div className={styles.content}>
@@ -17,30 +19,28 @@ const Navbar: React.FC = () => {
         </div>
         <div className={styles.link}>
           <Link href={"/"}>
-            <Image src={logo} alt="frame" width={200} height={200} className={styles.headerImg} />
+            <Image
+              src={logo}
+              alt="frame"
+              width={200}
+              height={200}
+              className={styles.headerImg}
+            />
           </Link>
         </div>
         <div className={styles.list}>
           <ul>
             <li>
-              <Link href={"/home"}>
-              Home
-              </Link>
+              <Link href={"/home"}>Home</Link>
             </li>
             <li>
-              <Link href={"/categories"}>
-                Categories
-              </Link>
+              <Link href={"/product"}>Categories</Link>
             </li>
             <li>
-              <Link href={"/featured Products"}>
-                Featured Products
-              </Link>
+              <Link href={"/product"}>Featured Products</Link>
             </li>
             <li>
-              <Link href={"/billing"}>
-                Contact us
-              </Link>
+              <Link href={"/"}>Contact us</Link>
             </li>
           </ul>
         </div>
@@ -57,12 +57,23 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           <div className={styles.icon}>
-            <Link href="./shopping">
+            <Link href="./wishlist">
               <LoveIcon />
             </Link>
-            <Link href="./billing">
+            <div className={styles.cartContainer}>
+              <Link href={"/cart"}>
               <CartIcon />
-            </Link>
+              {cartCount > 0 && (
+                <span className={styles.cartCount}>{cartCount}</span>
+              )}
+              </Link>
+            </div>
+            {/* <Link href={"/cart"} className={styles.cartLink}>
+              <CartIcon />
+              {cartCount > 0 && (
+                <span className={styles.cartCount}>{cartCount}</span>
+              )}
+            </Link> */}
           </div>
         </div>
       </div>

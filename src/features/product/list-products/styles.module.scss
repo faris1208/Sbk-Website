@@ -1,0 +1,81 @@
+.wrapper{
+    width: 100%;
+    padding: 70px 0px 50px;
+
+    .container{
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .container_filter{
+
+            .btns {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                // background-color: #ffffffcc;
+                padding: 10px 0px;
+                @media (max-width: 768px) {
+                  bottom: 10%;
+                  padding: 5px 0px;
+                  width: 100%;
+                  max-width: 310px;
+                  gap: 6px;
+                }
+        
+                .btnOne,
+                .btnTwo,
+                .btnThree {
+                //   border-radius: 25px;
+                  border: none;
+                  transition: all 0.3s ease;
+                  font-family: Open Sans;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 100%;
+                  letter-spacing: 0%;
+                  color: #c0bfbf;
+                  padding: 8px 16px;
+                  background-color: transparent;
+                  cursor: pointer;
+        
+                  @media (max-width: 768px) {
+                    // width: 68px;
+                    // height: 24px;
+                    padding: 10px 16px;
+                    // border-radius: 18px;
+                    font-size: 10.5px;
+                  }
+        
+                  &:hover {
+                    // background-color: #525150;
+                    border: 0px;
+                    // color: #fff;
+                  }
+                }
+        
+                .btnOne.active,
+                .btnTwo.active,
+                .btnThree.active {
+                //   background-color: #525150;
+                //   border-bottom: 1px solid #525150;
+                  color: #1E1E1E;
+                  font-weight: 600;
+                }
+              }
+        }
+
+        .card_wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px 10px;
+            margin-top: 40px;
+      
+            @media (max-width: 768px){
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 30px 10px;
+            }
+          }
+    }
+}

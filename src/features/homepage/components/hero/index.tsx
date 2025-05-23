@@ -17,7 +17,7 @@ const Hero = () => {
             </p>
             <div className={styles.btnField}>
               <button className={styles.btn}>
-                <Link href={"./detail"}>
+                <Link href={"./product"}>
                   Shop Now
                 </Link>
               </button>

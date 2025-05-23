@@ -17,7 +17,7 @@ const Footer = () => {
               <h1>Join our style squad- Get 10% off your first order!</h1>
             </div>
             <button>
-              <Link href={"/detail"}>
+              <Link href={"/product"}>
                 Shop Our Products
               </Link>
             </button>

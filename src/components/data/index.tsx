@@ -19,6 +19,7 @@ import perfumes from "../../../public/assets/images/homepage/perfume_bacground.j
 import bags from "../../../public/assets/images/homepage/lv_women_bag.jpg";
 
 export interface Product {
+  id: string;
   img: StaticImageData | string; 
   name: string;
   old: number;
@@ -28,6 +29,7 @@ export interface Product {
 
 export const listCard: Product[] = [
   {
+    id: "1",
     img: cardOne,
     name: "Bvlgari Hedge Slide",
     old: 48750,
@@ -35,6 +37,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "2",
     img: cardTwo,
     name: "Bvlgari Serpenti",
     old: 52000,
@@ -42,6 +45,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "3",
     img: cardThree,
     name: "Bvlgari zero1",
     old: 45000,
@@ -49,6 +53,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "4",
     img: cardFour,
     name: "Bvlgari Divas' Dream",
     old: 55000,
@@ -56,6 +61,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "5",
     img: cardFive,
     name: "Bvlgari Fiery",
     old: 60000,
@@ -63,6 +69,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "6",
     img: cardSix,
     name: "Bvlgari Parentesi",
     old: 40000,
@@ -70,6 +77,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "7",
     img: cardSeven,
     name: "Bvlgari Tubogas",
     old: 58000,
@@ -77,6 +85,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "8",
     img: cardEight,
     name: "Bvlgari Aluminium",
     old: 42000,
@@ -84,6 +93,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "9",
     img: first,
     name: "Bvlgari Octo",
     old: 65000,
@@ -91,6 +101,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "10",
     img: second,
     name: "Bvlgari Lvcea",
     old: 53000,
@@ -98,6 +109,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "11",
     img: third,
     name: "Bvlgari Diva",
     old: 47000,
@@ -105,6 +117,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "12",
     img: fourth,
     name: "Bvlgari Bvlgari",
     old: 49000,
@@ -112,6 +125,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "14",
     img: fifth,
     name: "Bvlgari Solotempo",
     old: 51000,
@@ -119,6 +133,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "15",
     img: sixth,
     name: "Bvlgari Ergon",
     old: 44000,
@@ -126,6 +141,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "16",
     img: seventh,
     name: "Bvlgari Assioma",
     old: 56000,
@@ -133,6 +149,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "17",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -140,6 +157,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "18",
     img: cardSeven,
     name: "Bvlgari Tubogas",
     old: 58000,
@@ -147,6 +165,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "19",
     img: cardEight,
     name: "Bvlgari Aluminium",
     old: 42000,
@@ -154,6 +173,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "20",
     img: first,
     name: "Bvlgari Octo",
     old: 65000,
@@ -161,6 +181,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "21",
     img: second,
     name: "Bvlgari Lvcea",
     old: 53000,
@@ -168,6 +189,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "22",
     img: third,
     name: "Bvlgari Diva",
     old: 47000,
@@ -175,6 +197,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "23",
     img: fourth,
     name: "Bvlgari Bvlgari",
     old: 49000,
@@ -182,6 +205,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "24",
     img: fifth,
     name: "Bvlgari Solotempo",
     old: 51000,
@@ -189,6 +213,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "25",
     img: sixth,
     name: "Bvlgari Ergon",
     old: 44000,
@@ -196,6 +221,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "26",
     img: seventh,
     name: "Bvlgari Assioma",
     old: 56000,
@@ -203,6 +229,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "27",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -210,6 +237,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "28",
     img: cardSeven,
     name: "Bvlgari Tubogas",
     old: 58000,
@@ -217,6 +245,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "29",
     img: cardEight,
     name: "Bvlgari Aluminium",
     old: 42000,
@@ -224,6 +253,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "30",
     img: first,
     name: "Bvlgari Octo",
     old: 65000,
@@ -231,6 +261,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "31",
     img: second,
     name: "Bvlgari Lvcea",
     old: 53000,
@@ -238,6 +269,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "32",
     img: third,
     name: "Bvlgari Diva",
     old: 47000,
@@ -245,6 +277,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "33",
     img: fourth,
     name: "Bvlgari Bvlgari",
     old: 49000,
@@ -252,6 +285,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "34",
     img: fifth,
     name: "Bvlgari Solotempo",
     old: 51000,
@@ -259,6 +293,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "35",
     img: sixth,
     name: "Bvlgari Ergon",
     old: 44000,
@@ -266,6 +301,7 @@ export const listCard: Product[] = [
     category: "best selling"
   },
   {
+    id: "36",
     img: seventh,
     name: "Bvlgari Assioma",
     old: 56000,
@@ -273,6 +309,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "37",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -280,6 +317,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "38",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -287,6 +325,7 @@ export const listCard: Product[] = [
     category: "new arrivals"
   },
   {
+    id: "39",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -294,6 +333,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "40",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
@@ -301,6 +341,7 @@ export const listCard: Product[] = [
     category: "top selling"
   },
   {
+    id: "41",
     img: first,
     name: "Bvlgari Diagono",
     old: 48000,
