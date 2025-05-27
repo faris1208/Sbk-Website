@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import styles from "../billing-information/styles.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 import { CheckBackIcon, DeliveryIcon, LayerIcon } from "@/components/icon";
 import { useCart } from "@/components/context";
+import { useRouter } from "next/navigation";
 
 const BillingInformation = () => {
+  const router = useRouter();
   const { cartItems } = useCart();
   const [paymentMethod, setPaymentMethod] = useState<"bank" | "cash">("bank");
 
-  // Form state
   const [contactInfo, setContactInfo] = useState({
     firstName: "",
     lastName: "",
@@ -49,13 +49,15 @@ const BillingInformation = () => {
     // Redirect to confirmation page
   };
 
+  const handleClick = () => {
+    router.push("/cart")
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <Link href="/cart">
+        <div onClick={handleClick} className={styles.header}>
             <CheckBackIcon className={styles.backIcon} />
-          </Link>
           <h1>Billing Details</h1>
         </div>
 
@@ -68,7 +70,7 @@ const BillingInformation = () => {
                 <div className={styles.formGroup}>
                   <div className={styles.nameFields}>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="firstName">First Name *</label>
+                      <label htmlFor="firstName">First Name <span>*</span></label>
                       <input
                         type="text"
                         id="firstName"
@@ -78,7 +80,7 @@ const BillingInformation = () => {
                       />
                     </div>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="lastName">Last Name *</label>
+                      <label htmlFor="lastName">Last Name <span>*</span></label>
                       <input
                         type="text"
                         id="lastName"
@@ -91,7 +93,7 @@ const BillingInformation = () => {
 
                   <div className={styles.contactFields}>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="phone">Phone Number *</label>
+                      <label htmlFor="phone">Phone Number <span>*</span></label>
                       <input
                         type="tel"
                         id="phone"
@@ -101,7 +103,7 @@ const BillingInformation = () => {
                       />
                     </div>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="email">Email Address *</label>
+                      <label htmlFor="email">Email Address <span>*</span></label>
                       <input
                         type="email"
                         id="email"
@@ -137,7 +139,7 @@ const BillingInformation = () => {
 
                 <div className={styles.formGroup}>
                   <div className={styles.inputGroup}>
-                    <label htmlFor="country">Country/Region *</label>
+                    <label htmlFor="country">Country/Region <span>*</span></label>
                     <select
                       id="country"
                       value={addressInfo.country}
@@ -152,7 +154,7 @@ const BillingInformation = () => {
                   </div>
 
                   <div className={styles.inputGroup}>
-                    <label htmlFor="address">Address *</label>
+                    <label htmlFor="address">Address <span>*</span></label>
                     <input
                       type="text"
                       id="address"
@@ -174,7 +176,7 @@ const BillingInformation = () => {
 
                   <div className={styles.locationFields}>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="city">City *</label>
+                      <label htmlFor="city">City <span>*</span></label>
                       <input
                         type="text"
                         id="city"
@@ -184,7 +186,7 @@ const BillingInformation = () => {
                       />
                     </div>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="state">State *</label>
+                      <label htmlFor="state">State <span>*</span></label>
                       <input
                         type="text"
                         id="state"
@@ -247,16 +249,16 @@ const BillingInformation = () => {
 
                 <div className={styles.orderTotals}>
                   <div className={styles.totalRow}>
-                    <span>Subtotal</span>
-                    <span>N{subtotal.toLocaleString()}</span>
+                    <span>Subtotal:</span>
+                    <span className={styles.total_amount}>N{subtotal.toLocaleString()}</span>
                   </div>
                   <div className={styles.totalRow}>
-                    <span>Shipping</span>
-                    <span>N{shippingFee.toLocaleString()}</span>
+                    <span>Shipping fee</span>
+                    <span className={styles.total_amount}>N{shippingFee.toLocaleString()}</span>
                   </div>
                   <div className={styles.totalRow}>
                     <span>Total</span>
-                    <span className={styles.grandTotal}>N{total.toLocaleString()}</span>
+                    <span className={styles.total_amount}>N{total.toLocaleString()}</span>
                   </div>
                 </div>
 

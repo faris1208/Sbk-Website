@@ -90,6 +90,56 @@ const CartPageFlow = () => {
                     </button>
                   </div>
                 ))}
+
+                {cartItems.map((item) => (
+                  <div key={item.id} className={styles.cartItem_mobile}>
+                    <div className={styles.productInfo}>
+                      <div className={styles.new}>
+                        <Image
+                          src={item.img}
+                          alt={item.name}
+                          width={80}
+                          height={80}
+                          className={styles.productImage}
+                        />
+                        <div className={styles.text}>
+                          <p>{item.name}</p>
+                          {item.size && <p>Size: {item.size}</p>}
+                          <p className={styles.amount}>
+                            N{item.price.toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
+                      <div className={styles.btn}>
+                      <button
+                      className={styles.removeButton}
+                      onClick={() => removeFromCart(item.id)}
+                    >
+                      <DeleteIconBlack className={styles.delete} />
+                    </button>
+                    </div>
+                    </div>
+                    <div className={styles.quantityControl_box}>
+                    <div className={styles.quantityControl}>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
+                      >
+                        -
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
+                      >
+                        +
+                      </button>
+                    </div>
+                    </div>
+                  </div>
+                ))}
               </div>
               <div className={styles.summary_box}>
                 <div className={styles.summary}>
@@ -109,7 +159,10 @@ const CartPageFlow = () => {
                       N{(subtotal + 2000).toLocaleString()}
                     </span>
                   </div>
-                  <Link href="/billing-details" className={styles.checkoutButton}>
+                  <Link
+                    href="/billing-details"
+                    className={styles.checkoutButton}
+                  >
                     Proceed to Checkout
                   </Link>
                 </div>
